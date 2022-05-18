@@ -7,8 +7,7 @@ pipeline {
         kubernetes {
             label podLabel
             defaultContainer 'jnlp'
-            yaml 
-"""
+            yaml """
 apiVersion: v1
 kind: Pod
 metadata:
