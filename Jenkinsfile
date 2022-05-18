@@ -13,7 +13,7 @@ kind: Pod
 metadata:
   labels:
     jenkins-build: app-build
-    some-label: "build-app-${BUILD_NUMBER}"
+    some-label: ""
 spec:
   containers:
   - name: kaniko
