@@ -7,7 +7,7 @@ pipeline {
         kubernetes {
             label podLabel
             defaultContainer 'jnlp'
-            yaml '''
+            yaml """
 apiVersion: v1
 kind: Pod
 metadata:
@@ -34,7 +34,7 @@ spec:
           items:
             - key: .dockerconfigjson
               path: config.json
-'''
+"""
         }
     }
 
@@ -61,8 +61,8 @@ spec:
                     --verbosity debug \
                     --insecure \
                     --skip-tls-verify \
-                    --destination dockername/angular-app:v0.1.0 \
-                    --destination dockername/angular-app:latest
+                    --destination internship/angular-app:v0.1.0 \
+                    --destination internship/angular-app:latest
                 '''
               }
             }
