@@ -7,7 +7,8 @@ pipeline {
         kubernetes {
             label podLabel
             defaultContainer 'jnlp'
-            yaml """
+            yaml 
+"""
 apiVersion: v1
 kind: Pod
 metadata:
@@ -17,7 +18,7 @@ metadata:
 spec:
   containers:
   - name: kaniko
-    image: gcr.io/kaniko-project/executor:v1.5.1-debug
+    image: gcr.io/kaniko-project/executor:latest
     imagePullPolicy: IfNotPresent
     command:
     - /busybox/cat
@@ -61,8 +62,8 @@ spec:
                     --verbosity debug \
                     --insecure \
                     --skip-tls-verify \
-                    --destination dockername/myapp:v0.1.0 \
-                    --destination dockername/myapp:latest
+                    --destination dockername/angular-app:v0.1.0 \
+                    --destination dockername/angular-app:latest
                 '''
               }
             }
