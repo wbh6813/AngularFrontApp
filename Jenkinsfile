@@ -20,7 +20,7 @@ spec:
     image: gcr.io/kaniko-project/executor:latest
     imagePullPolicy: IfNotPresent
     command:
-    - /busybox/cat
+    - /busybox/sh
     tty: true
     volumeMounts:
       - name: jenkins-docker-cfg
